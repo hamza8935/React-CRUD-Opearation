@@ -18,9 +18,19 @@ export const GlobalProvider = ({children}) =>{
 
     const [state, dispatch] = useReducer(AppReducer, initialState) ;
 
+
+
+function removeUser(id) {
+    dispatch({
+        type : 'REMOVE' ,
+        payLoad : id ,
+    })
+        
+
+}
     return(
 
-      < GlobalContext.Provider value = {{users : state.users}}>
+      < GlobalContext.Provider value = {{users : state.users , removeUser}}>
       {children}
       </GlobalContext.Provider>
     )
