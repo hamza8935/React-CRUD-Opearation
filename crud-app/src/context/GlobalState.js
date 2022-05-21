@@ -29,7 +29,7 @@ function removeUser(id) {
 
 }
 
-function submit(name) {
+function addUser(name) {
     dispatch({
         type : 'ADD_USER',
         payLoad : name
@@ -37,7 +37,7 @@ function submit(name) {
 }
     return(
 
-      < GlobalContext.Provider value = {{users : state.users , removeUser , submit}}>
+      < GlobalContext.Provider value = {{users : state.users , removeUser , addUser}}>
       {children}
       </GlobalContext.Provider>
     )
